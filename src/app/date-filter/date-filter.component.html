@@ -1,0 +1,19 @@
+<mat-form-field>
+  <input matInput
+         placeholder="Дата с"
+         [matDatepicker]="dateFrom"
+         [formControl]="dateFromControl"
+         [max]="fromMaxDate"
+  >
+  <mat-datepicker-toggle matSuffix [for]="dateFrom"></mat-datepicker-toggle>
+  <mat-datepicker #dateFrom></mat-datepicker>
+</mat-form-field>
+<mat-form-field>
+  <input matInput [matDatepicker]="dateTo" placeholder="Дата по"
+         [formControl]="dateToControl" [max]="toMaxDate"
+         (dateChange)="dateToChanged()"
+  >
+  <mat-datepicker-toggle matSuffix [for]="dateTo"></mat-datepicker-toggle>
+  <mat-datepicker #dateTo></mat-datepicker>
+</mat-form-field>
+<button mat-button (click)="filterTable()">Фильтровать</button>
